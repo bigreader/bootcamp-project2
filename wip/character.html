@@ -6,6 +6,28 @@
 	<title>Arthin Westbrook</title>
 
 	<style type="text/css">
+
+		.row.fullscreen {
+			min-height: 100vh;
+		}
+
+		#col-bio {
+			background: #345 url(background.jpg) center/cover;
+			color: white;
+		}
+
+		#avatar {
+			border-radius: 100%;
+			width: 200px;
+			margin: 4rem auto 2rem;
+		}
+
+		@media (min-width: 768px) { /* MD */
+			h2 {
+				text-align: right;
+			}
+		}
+
 		
 		#skills-list {
 			display: flex;
@@ -64,10 +86,14 @@
 </head>
 <body>
 
+	<!-- NAVBAR HERE -->
+
 	<div class="container-fluid">
-		<div class="row">
-			
-			<div class="col-12 col-md-4 text-center">
+		<div class="row fullscreen">
+
+
+			<div id="col-bio" class="col-12 col-md-4 text-center">
+				<img src="avatar.jpg" id="avatar">
 				<h1>Arthin Westbrook</h1>
 				<p class="class">Half-Elven Sorcerer</p>
 			</div>
