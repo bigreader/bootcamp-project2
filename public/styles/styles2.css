@@ -1,6 +1,4 @@
-.list-group-item {
-  line-height: 2.5;
-}
+
 
 body { /* Visual */
   background-image: url("greenish.png");
@@ -11,6 +9,8 @@ body { /* Visual */
 
 h1 {
 font-size: 50px;
+margin-top: .33em;
+margin-bottom: .5em;
 }
 
 h1, h2, p {
@@ -19,7 +19,7 @@ color: #325a32;
 }
 
 p {
-font-size: 30px;
+font-size: 25px;
 }
 
 li {
@@ -28,12 +28,14 @@ color: #325a32;
 
 
 #welcome{
-margin-top:20px;
-margin-left: 20px;
-padding: 25px;
-height: 300px;
-width: 660px;
-border-radius: 30px;  
+margin-top:15px;
+margin-left: 60px;
+padding-right: 10px;
+padding-left: 30px;
+/* padding-right: 15px;*/
+height: 320px;
+width: 540px;
+border-radius: 25px;  
 /* background-color:#eef8b1;*/
 background-color: #fbfccb;
 border: 3px;
@@ -42,21 +44,37 @@ border-style: ridge;
 }
 
 #main_head {
-  margin-top: 30px;
+margin-top: 30px;
  /* margin-left: 70px; */
+}
+
+#button_holder {
+width: 540px;
+margin-top: 25px;
 }
 
 button {
   font-size: 20px;
   font-family: 'IM Fell English', serif;
-  height: 40px;
-  width: 150px;
+  height: 40px;  
   border-color: #325a32;
   color:#eef8b1;
   background-color: #325a32;
   /*margin-top: 10px;*/
-  margin-left: 250px;
+  
 }
+
+#login {
+  width: 180px;
+  margin-left: 20px;
+}
+
+#create_acct {
+  width: 180px;
+  margin-left: 100px;
+}
+
+
 
 
 
@@ -64,10 +82,7 @@ button {
  /* margin-left: 70px; */
 }
 
-#welcome_text {
 
-
-}
 
 @media only screen and (max-width: 823px) {
 
@@ -93,7 +108,7 @@ button {
     }
      
     #main_head {
-      margin-top: 10px;
+     /* margin-top: 10px; */
      /* margin-left: 70px; */
     }
 
@@ -108,10 +123,6 @@ button {
         background-size: cover;
     }
 
-    button { 
-      margin-top: 10px;
-      margin-left: 140px;
-    }
 
 }
 
