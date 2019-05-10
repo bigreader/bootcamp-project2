@@ -2,13 +2,35 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica|IM+Fell+DW+Pica+SC" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans&text=1234567890-%2B%2C" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<title>Arthin Westbrook</title>
 
 	<style type="text/css">
 
+		body {
+			font-family: 'IM Fell DW Pica', serif;
+			font-size: 1.2em;
+		}
+
+		.navbar {
+			height: 60px;
+			background: #edc;
+			color: #262;
+		}
+
+		.navbar a {
+			color: #262;
+		}
+
+		.navbar-brand {
+			font-family: 'IM Fell DW Pica SC', sans-serif;
+			font-size: 1.5em;
+		}
+
 		.row.fullscreen {
-			min-height: 100vh;
+			min-height: calc(100vh - 60px);
 		}
 
 		#col-bio {
@@ -22,8 +44,17 @@
 			margin: 4rem auto 2rem;
 		}
 
+		h1 {
+			margin: 0;
+		}
+
+		.role {
+			font-family: 'IM Fell DW Pica SC', sans-serif;
+		}
+
+
 		@media (min-width: 768px) { /* MD */
-			h2 {
+			.side-heading {
 				text-align: right;
 			}
 		}
@@ -33,7 +64,7 @@
 			display: flex;
 			list-style: none;
 			padding: 0;
-			padding-top: 0.75em;
+			padding-top: 0.5em;
 			flex-wrap: wrap;
 		}
 
@@ -54,14 +85,24 @@
 
 		figure .value {
 			display: block;
-			font-size: 2.5rem;
-			line-height: 6rem;
+			position: relative;
+
 			width: 100%;
+			line-height: 6rem;
+			font-size: 2.25rem;
+
 			color: #666;
+			font-family: 'PT Sans', sans-serif;
+
+			z-index: 2;
 		}
 
 		figure .value.md { font-size: 2rem; }
 		figure .value.sm { font-size: 1rem; }
+
+		figure.white .value {
+			color: white;
+		}
 
 		figure img {
 			position: absolute;
@@ -72,7 +113,7 @@
 			width: 100%;
 			height: auto;
 
-			z-index: -1;
+			z-index: 1;
 		}
 
 		figure figcaption {
@@ -80,13 +121,37 @@
 			bottom: 0;
 			left: 0;
 			right: 0;
+
+			text-transform: lowercase;
+			font-family: 'IM Fell DW Pica SC', sans-serif;
 		}
 
 	</style>
 </head>
 <body>
 
-	<!-- NAVBAR HERE -->
+	<nav class="navbar navbar-expand-lg">
+		<span class="navbar-brand">D&amp;D Characters</span>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="nav">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="/">Overview <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/inventory">Equipment</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/biography">Biography</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+
 
 	<div class="container-fluid">
 		<div class="row fullscreen">
@@ -95,56 +160,98 @@
 			<div id="col-bio" class="col-12 col-md-4 text-center">
 				<img src="avatar.jpg" id="avatar">
 				<h1>Arthin Westbrook</h1>
-				<p class="class">Half-Elven Sorcerer</p>
+				<p class="role">Half-Elven Sorcerer</p>
+
+				<div class="d-flex flex-wrap mx-auto" style="max-width: 22rem; padding-left: 1rem;">
+					<figure class="white">
+						<img src="core.svg">
+						<span class="value">15</span>
+						<figcaption>Strength</figcaption>
+					</figure>
+					<figure class="white">
+						<img src="core.svg">
+						<span class="value">12</span>
+						<figcaption>Dexterity</figcaption>
+					</figure>
+					<figure class="white">
+						<img src="core.svg">
+						<span class="value">11</span>
+						<figcaption>Constitution</figcaption>
+					</figure>
+					<figure class="white">
+						<img src="core.svg">
+						<span class="value">8</span>
+						<figcaption>Intelligence</figcaption>
+					</figure>
+					<figure class="white">
+						<img src="core.svg">
+						<span class="value">15</span>
+						<figcaption>Wisdom</figcaption>
+					</figure>
+					<figure class="white">
+						<img src="core.svg">
+						<span class="value">17</span>
+						<figcaption>Charisma</figcaption>
+					</figure>
+				</div>
 			</div>
 
+
 			<div class="col-12 col-md-8">
-				
+
 				<div class="row align-items-center my-5">
 					<div class="col-12 col-md-2">
-						<h2>Health</h2>
+						<h2 class="side-heading">Combat</h2>
 					</div>
 					<div class="col-12 col-md-10 d-flex flex-wrap">
-						<figure id="stat-health">
-							<img src="heart.svg">
-							<span class="value md">46</span>
-							<figcaption>Health</figcaption>
+						<figure>
+							<img src="armor.svg">
+							<span class="value">11</span>
+							<figcaption>Armor Class</figcaption>
 						</figure>
-						<figure id="stat-health">
-							<img src="box.svg">
-							<span class="value">+2</span>
+						<figure>
+							<img src="initiative.svg">
+							<span class="value">+1</span>
+							<figcaption>Initiative</figcaption>
+						</figure>
+						<figure>
+							<img src="speed.svg">
+							<span class="value">30</span>
+							<figcaption>Speed</figcaption>
+						</figure>
+					</div>
+				</div>
+
+				<div class="row align-items-center my-5">
+					<div class="col-12 col-md-2">
+						<h2 class="side-heading">Health</h2>
+					</div>
+					<div class="col-12 col-md-10 d-flex flex-wrap">
+						<figure>
+							<img src="health.svg">
+							<span class="value">20</span>
 							<figcaption>Hit Points</figcaption>
 						</figure>
-						<figure id="stat-health">
+						<figure>
 							<img src="box.svg">
-							<span class="value">14</span>
-							<figcaption>Hit Points</figcaption>
+							<span class="value">24</span>
+							<figcaption>Max Health</figcaption>
 						</figure>
-						<figure id="stat-health">
+						<figure>
 							<img src="box.svg">
-							<span class="value">38</span>
-							<figcaption>Hit Points</figcaption>
-						</figure>
-						<figure id="stat-health">
-							<img src="box.svg">
-							<span class="value md">126</span>
-							<figcaption>Hit Points</figcaption>
-						</figure>
-						<figure id="stat-health">
-							<img src="box.svg">
-							<span class="value sm">24,000</span>
-							<figcaption>Hit Points</figcaption>
+							<span class="value">7</span>
+							<figcaption>Hit Dice</figcaption>
 						</figure>
 					</div>
 				</div>
 
 				<div class="row">
 					<div class="col-12 col-md-2">
-						<h2>Skills</h2>
+						<h2 class="side-heading">Skills</h2>
 					</div>
 					<div class="col-12 col-md-10">
 						<ul id="skills-list">
-							
+
 							<li>Acrobatics</li>
 							<li>Acrobatics</li>
 							<li>Acrobatics</li>
