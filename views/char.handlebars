@@ -1,0 +1,114 @@
+<nav class="navbar navbar-expand-lg">
+	<span class="navbar-brand">D&amp;D Characters</span>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="nav">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="/">Overview <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/inventory">Equipment</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/biography">Biography</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<div class="container-fluid">
+	<div class="row fullscreen">
+
+		<div id="col-bio" class="col-12 col-md-4 text-center">
+			<img src="/img/avatar.jpg" id="avatar">
+			<h1>{{name}}</h1>
+			<p class="role">Half-Elf  •  Sorcerer</p>
+
+			<div class="core-stats">
+				<figure class="white">
+					<img src="core.svg">
+					<span class="value">{{strength}}</span>
+					<figcaption>Strength</figcaption>
+				</figure>
+				<figure class="white">
+					<img src="core.svg">
+					<span class="value">{{dexterity}}</span>
+					<figcaption>Dexterity</figcaption>
+				</figure>
+				<figure class="white">
+					<img src="core.svg">
+					<span class="value">{{constitution}}</span>
+					<figcaption>Constitution</figcaption>
+				</figure>
+				<figure class="white">
+					<img src="core.svg">
+					<span class="value">{{intelligence}}</span>
+					<figcaption>Intelligence</figcaption>
+				</figure>
+				<figure class="white">
+					<img src="core.svg">
+					<span class="value">{{wisdom}}</span>
+					<figcaption>Wisdom</figcaption>
+				</figure>
+				<figure class="white">
+					<img src="core.svg">
+					<span class="value">{{charisma}}</span>
+					<figcaption>Charisma</figcaption>
+				</figure>
+			</div>
+		</div>
+
+
+		<div class="col-12 col-md-8">
+
+			<div class="row align-items-center my-5">
+				<div class="col-12 col-md-2">
+					<h2 class="side-heading">Combat</h2>
+				</div>
+				<div class="col-12 col-md-10 d-flex flex-wrap">
+					<figure>
+						<img src="armor.svg">
+						<span class="value">11</span>
+						<figcaption>Armor Class</figcaption>
+					</figure>
+					<figure>
+						<img src="initiative.svg">
+						<span class="value">+1</span>
+						<figcaption>Initiative</figcaption>
+					</figure>
+					<figure>
+						<img src="speed.svg">
+						<span class="value">30</span>
+						<figcaption>Speed</figcaption>
+					</figure>
+				</div>
+			</div>
+
+			<div class="row align-items-center my-5">
+				<div class="col-12 col-md-2">
+					<h2 class="side-heading">Health</h2>
+				</div>
+				<div class="col-12 col-md-10 d-flex flex-wrap">
+					<figure>
+						<img src="health.svg">
+						<span class="value">20</span>
+						<figcaption>Hit Points</figcaption>
+					</figure>
+					<figure>
+						<img src="box.svg">
+						<span class="value">24</span>
+						<figcaption>Max Health</figcaption>
+					</figure>
+					<figure>
+						<img src="box.svg">
+						<span class="value">7</span>
+						<figcaption>Hit Dice</figcaption>
+					</figure>
+				</div>
+			</div>
+
+		</div>
+	</div>
