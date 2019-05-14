@@ -1,26 +1,52 @@
-var db = require("../models");
-
-
+let Character = require("../models/characters.js");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
-    });
+  app.get("/api/:characters?", function(req, res) {
+    if (req.params.characters) {
+      Character.findOne({
+        where: {
+          routeName: req.params.characters
+        }
+      }).then(function(result) {
+        return res.json(result);
+      });
+    } else {
+      Character.findAll().then(function(result) {
+        return res.json(result);
+      });
+    }
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  app.post("/api/new", function(req, res) {
+    let character = req.body;
+    let routeName = character.name.replace(/\s+/g, "").toLowerCase();
+
+    Character.create({
+      routeName: routeName,
+      name: character.name,
+      class: character.class,
+      race: character.race,
+      alignment: character.alignment,
+      level: character.level,
+      experiene: character.experiene,
+      speed: character.speed,
+      charisma: character.charisma,
+      strength: character.strength,
+      dexterity: character.dexterity,
+      constitution: character.constitution,
+      intelligence: character.intelligence
     });
+
+    res.status(204).end();
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
+  app.delete("/api/delete/:id", function(req, res) {
+    db.Character.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbCharacter) {
+      res.json(dbCharacter);
     });
   });
 };

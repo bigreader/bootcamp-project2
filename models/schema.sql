@@ -1,1 +1,1 @@
-CREATE DATABASE Characters;
+CREATE DATABASE `characters`;
