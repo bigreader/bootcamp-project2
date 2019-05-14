@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <title>D & D Character Builder</title>
+</head>
+
+<body>
+
+
+    <div id="welcome">
+        <div id=main_head>
+            <h1>D & D Character Builder</h1>
+        </div>
+        <div id="subhead">
+            <h2>Welcome to the Dungeons and Dragons Character Builder! Create a character and track its race, class,
+                abilities, inventory and more.</h2>
+            <div id="button_holder">
+                <!-- Modal -->
+                <!-- <div class="w3-container"> -->
+                <!-- Trigger modal with Log In button -->
+                <button onclick="document.getElementById('id01').style.display='block'; document.getElementById('id02').style.display='none'" id="logIn">Log In</button>
+                <!-- Trigger modal with Log In button -->
+                <button onclick="document.getElementById('id02').style.display='block';document.getElementById('id01').style.display='none'" id="create_acct">Create
+                    Account</button>
+
+            </div>
+
+        </div>
+
+        <div id="id01" class="w3-modal" style="display:none">
+            <div class="w3-modal-content">
+                <div class="w3-container">
+                    <h2>Enter your login info:</h2>
+                    <div>
+                        <div class="modalText"><strong>User ID</strong<>
+                                <br />
+                                <input type="text" id="userID" class="box">
+                                <div class="modalText"><strong>Password</strong></div>
+                                <input type="text" id="password" class="box">
+                        </div>
+
+                        <div id="modalButtonBox">
+                            <!-- Take user to site with Log In button -->
+                            <button onclick="document.getElementById('id01').style.display='block'" id="logInModal">Log
+                                In</button>
+                            <button onclick="document.getElementById('id01').style.display='none'"
+                                id="cancelModal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="id02" class="w3-modal" style="display:none">
+            <div class="w3-modal-content">
+                <div class="w3-container">
+                    <h2>Create an Account:</h2>
+                    <div>
+                        <div class="modalText"><strong>User ID</strong<>
+                                <br />
+                                <input type="text" id="newUserID" class="box">
+                                <div class="modalText"><strong>Password</strong></div>
+                                <input type="text" id="newPassword" class="box">
+                        </div>
+
+                        <div id="modalButtonBox">
+                            <!-- Take user to site with Log In button -->
+                            <!-- <button onclick="document.getElementById('id01').style.display='block'" id="logInModal">Log In</button> -->
+                            <button onclick="document.getElementById('id02').style.display='none'"
+                                id="submit">Submit</button>
+                            <button onclick="document.getElementById('id02').style.display='none'"
+                                id="cancelModal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+</body>
+
+
+
+</html>
