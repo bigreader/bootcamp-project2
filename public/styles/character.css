@@ -24,7 +24,7 @@ body {
 }
 
 #col-bio {
-	background: #345 url(background.jpg) center/cover;
+	background: #345 url(/img/background.jpg) center/cover;
 	color: white;
 }
 
