@@ -47,5 +47,4 @@ $("#add-btn").on("click", function(event) {
     $("inspiration").val("")
     $("#speed").val("");
     $("#level").val("");
-  
   });

@@ -1,20 +1,22 @@
-var Sequelize = require("sequelize");
-var sequelize = require("../config/connection.js");
+module.exports = function(sequelize, DataTypes) {
 
 var Characters = sequelize.define("Characters", {
-  routeName: Sequelize.STRING,
-  name: Sequelize.STRING,
-  charisma: Sequelize.INTEGER,
-  strength: Sequelize.INTEGER,
-  dexterity: Sequelize.INTEGER,
-  constitution: Sequelize.INTEGER,
-  intelligence: Sequelize.INTEGER,
+  routeName: DataTypes.STRING,
+  name: DataTypes.STRING,
+  charisma: DataTypes.INTEGER,
+  strength: DataTypes.INTEGER,
+  dexterity: DataTypes.INTEGER,
+  constitution: DataTypes.INTEGER,
+  intelligence: DataTypes.INTEGER,
   });
 
- 
-// Syncs with DB
-Characters.sync();
+  Characters.associate = function(models) {
+    // Associating Author with Posts
+    // When an Author is deleted, also delete any associated Posts
+   // Characters.hasMany(models.Post, {
+     // onDelete: "cascade"
+    //});
+  };
 
-// Makes the Character Model available for other files (will also create a table)
-module.exports = Characters;
-
+  return Characters;
+};
