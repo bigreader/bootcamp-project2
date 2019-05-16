@@ -91,7 +91,6 @@
 				class: $('#char-class').val(),
 				race: $('#char-race').val(),
 				alignment: $('#char-alignment').val(),
-				image: $('#char-image').val(),
 				level: 1,
 				experience: 0,
 				speed: 30,
@@ -102,6 +101,7 @@
 				wisdom: 10,
 				charisma: 10
 			}
+			if ($('#char-image').val()) data.image = $('#char-image').val();
 
 			$.post('/api/new', data, function(data) {
 				window.location.href = '/characters/' + data.id;

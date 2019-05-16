@@ -6,7 +6,7 @@ var Characters = sequelize.define("Characters", {
   image: {
     type: DataTypes.STRING,
     defaultValue: "/img/avatar.png"
-  }
+  },
   class: DataTypes.STRING,
   race: DataTypes.STRING,
   alignment: DataTypes.STRING,
