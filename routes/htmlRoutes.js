@@ -1,6 +1,6 @@
 const path = require("path");
 
-module.exports = function(app) {
+module.exports = function(app, db) {
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/welcome.html"));
   });
@@ -17,11 +17,34 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/add", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/add.html"));
+  app.get("/characters", function(req, res) {
+    db.Characters.findAll().then(results => {
+
+      res.render("character-list", {
+        characters: results
+      });
+
+    })
+    
   });
 
-  app.get("/all", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/all.html"));
+  app.get("/characters/:id", function(req, res) {
+    const id = req.params.id;
+    db.Characters.findOne({
+      where: {
+        id: id
+      }
+    }).then(result => {
+      console.log(result);
+      res.render("character", {
+        ...result.dataValues
+      });      
+    });
+
   });
+
+  app.get("/add", function(req, res) {
+    res.render("character-add");  
+  });
+
 };

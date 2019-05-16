@@ -1,6 +1,6 @@
 let db = require("../models");
 
-module.exports = function(app) {
+module.exports = function(app, db) {
   app.get("/api/:characters?", function(req, res) {
     if (req.params.characters) {
       db.Characters.findOne({
@@ -21,7 +21,7 @@ module.exports = function(app) {
 
     let character = req.body;
     let routeName = character.name.replace(/\s+/g, "").toLowerCase();
-    
+
     db.Characters.create({
       routeName: routeName,
       name: character.name,

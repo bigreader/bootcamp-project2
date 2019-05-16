@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg">
+	<span class="navbar-brand">D&amp;D Characters</span>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="nav">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="/">Overview <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/inventory">Equipment</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/biography">Biography</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<div class="container-fluid">
+	<div class="row fullscreen" style="justify-content: center;">
+		<div class="col-5">
+
+  {{#each characters}}
+			<div>
+				<h2 class="mb-0"><a href="/characters/{{this.id}}">{{this.name}}</a></h2>
+				<p class="role">{{this.race}}  •  {{this.class}}   •  {{this.alignment}}   •  Lv. {{this.level}}</p>
+			</div>
+  {{/each}}
+
+
+		</div>
+	</div>
+</div>
