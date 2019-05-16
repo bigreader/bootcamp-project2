@@ -22,13 +22,13 @@ body {
 	background: #f4eee4;
 }
 
-.navbar {
-	height: 60px;
-	background: #e4d6bc;
+a, a:hover {
 	color: #325a32;
 }
 
-.navbar a {
+.navbar {
+	height: 60px;
+	background: #e4d6bc;
 	color: #325a32;
 }
 

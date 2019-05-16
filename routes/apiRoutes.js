@@ -8,6 +8,7 @@ module.exports = function(app, db) {
           routeName: req.params.characters
         }
       }).then(function(result) {
+        if (!result) return res.status(404).end();
         return res.json(result);
       });
     } else {
@@ -31,14 +32,32 @@ module.exports = function(app, db) {
       level: character.level,
       experience: character.experience,
       speed: character.speed,
-      charisma: character.charisma,
       strength: character.strength,
       dexterity: character.dexterity,
       constitution: character.constitution,
-      intelligence: character.intelligence
+      wisdom: character.wisdom,
+      intelligence: character.intelligence,
+      charisma: character.charisma
+    }).then(function(character) {
+      res.status(201).json(character);
     });
 
-    res.status(204).end();
+  });
+
+
+  app.put("/api/:id", function(req, res) {
+    db.Characters
+    .update(req.body, {
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(function(count) {
+      res.status(204).end();
+    })
+    .catch(function(err) {
+      res.status(500).end();
+    });
   });
  
 

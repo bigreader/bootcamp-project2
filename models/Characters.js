@@ -9,12 +9,15 @@ var Characters = sequelize.define("Characters", {
   level: DataTypes.INTEGER,
   experience: DataTypes.INTEGER,
   speed: DataTypes.INTEGER,
-  charisma: DataTypes.INTEGER,
   strength: DataTypes.INTEGER,
   dexterity: DataTypes.INTEGER,
   constitution: DataTypes.INTEGER,
-  intelligence: DataTypes.INTEGER
+  intelligence: DataTypes.INTEGER,
+  wisdom: DataTypes.INTEGER,
+  charisma: DataTypes.INTEGER
   });
+
+  Characters.sync({force:true});
 
   return Characters;
 };
