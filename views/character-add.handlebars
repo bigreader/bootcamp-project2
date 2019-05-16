@@ -1,0 +1,114 @@
+<nav class="navbar navbar-expand-lg">
+	<span class="navbar-brand">D&amp;D Characters</span>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav"
+		aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="nav">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="/">Overview <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/inventory">Equipment</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/biography">Biography</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<div class="container-fluid">
+	<div class="row fullscreen" style="justify-content: center;">
+		<div class="col-5">
+
+			<form id="add-character">
+				<h2>TODO: make character form</h2>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+
+			<script>
+
+				$('#add-character').on('submit', (e) => {
+					e.preventDefault();
+					// make a newCharacter obj
+					/*
+					var newCharacter = {
+						// name from name input
+						name: $("#name")
+							.val()
+							.trim(),
+						class: $("#class")
+							.val()
+							.trim(),
+						race: $("#race")
+							.val()
+							.trim(),
+						alignment: $("#alignment")
+							.val()
+							.trim(),
+						level: $("#level")
+							.val()
+							.trim(),
+						experiene: $("#experience")
+							.val()
+							.trim(),
+						speed: $("#speed")
+							.val()
+							.trim(),
+						charisma: $("#charisma")
+							.val()
+							.trim(),
+						strength: $("#strength")
+							.val()
+							.trim(),
+						dexterity: $("#dexterity")
+							.val()
+							.trim(),
+						constitution: $("#constitution")
+							.val()
+							.trim(),
+						intelligence: $("#intelligence")
+							.val()
+							.trim()
+					};
+					*/
+					newCharacter = {
+						name: "Matt",
+						'class': 'Warrior',
+						race: 'Norn',
+						alignment: 'Ok',
+						level: 10,
+						experiene: 123,
+						speed: 1,
+						charisma: 1,
+						strength: 1,
+						dexterity: 1,
+						constitution: 1,
+						intelligence: 1
+					}
+					$.post("/api/new", newCharacter).then(function (data) {
+						console.log(data);
+						alert("Adding character...");
+					});
+
+					$("#name").val("");
+					$("#class").val("");
+					$("#race").val("");
+					$("#alignment").val("");
+					$("#level").val("");
+					$("#experience").val("");
+					$("#speed").val("");
+					$("#charisma").val("");
+					$("#strength").val("");
+					$("#constitution").val("");
+					$("#intelligence").val("");
+				})
+
+			</script>
+
+		</div>
+	</div>
+</div>

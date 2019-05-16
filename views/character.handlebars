@@ -1,0 +1,129 @@
+<nav class="navbar navbar-expand-lg">
+	<span class="navbar-brand">D&amp;D Characters</span>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse justify-content-end mr-3" id="nav">
+		<a href="/characters">My Characters</a>
+	</div>
+
+	<button id="save-button" class="btn btn-primary">Save</button>
+
+</nav>
+
+<div class="container-fluid">
+	<div class="row fullscreen">
+
+		<div id="col-bio" class="col-12 col-md-4 text-center">
+			<img src="/img/avatar.jpg" id="avatar">
+			<h1>{{name}}</h1>
+			<p class="role">{{race}} {{class}} &mdash; {{alignment}}</p>
+
+			<div class="core-stats">
+				<figure class="white">
+					<img src="/img/box-core.svg">
+					<input type="text" value="{{strength}}" name="strength">
+					<figcaption>Strength</figcaption>
+				</figure>
+				<figure class="white">
+					<img src="/img/box-core.svg">
+					<input type="text" value="{{dexterity}}" name="dexterity">
+					<figcaption>Dexterity</figcaption>
+				</figure>
+				<figure class="white">
+					<img src="/img/box-core.svg">
+					<input type="text" value="{{constitution}}" name="constitution">
+					<figcaption>Constitution</figcaption>
+				</figure>
+				<figure class="white">
+					<img src="/img/box-core.svg">
+					<input type="text" value="{{intelligence}}" name="intelligence">
+					<figcaption>Intelligence</figcaption>
+				</figure>
+				<figure class="white">
+					<img src="/img/box-core.svg">
+					<input type="text" value="{{wisdom}}" name="wisdom">
+					<figcaption>Wisdom</figcaption>
+				</figure>
+				<figure class="white">
+					<img src="/img/box-core.svg">
+					<input type="text" value="{{charisma}}" name="charisma">
+					<figcaption>Charisma</figcaption>
+				</figure>
+			</div>
+		</div>
+
+
+		<div class="col-12 col-md-8">
+
+			<div class="row align-items-center my-5">
+				<div class="col-12 col-md-2">
+					<h2 class="side-heading">Level</h2>
+				</div>
+				<div class="col-12 col-md-10 d-flex flex-wrap">
+					<figure>
+						<img src="/img/box-level.svg">
+						<input type="text" value="{{level}}" name="level">
+						<figcaption>Level</figcaption>
+					</figure>
+					<figure>
+						<img src="/img/box-xp.svg">
+						<input type="text" class="sm" value="{{experience}}" name="experience">
+						<figcaption>Experience</figcaption>
+					</figure>
+				</div>
+			</div>
+
+			<div class="row align-items-center my-5">
+				<div class="col-12 col-md-2">
+					<h2 class="side-heading">Combat</h2>
+				</div>
+				<div class="col-12 col-md-10 d-flex flex-wrap">
+					<figure>
+						<img src="/img/box-speed.svg">
+						<input type="text" value="{{speed}}" name="speed">
+						<figcaption>Speed</figcaption>
+					</figure>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+<script type="text/javascript">
+	$(function() {
+
+		$('figure input').on({
+			focus: function() {
+				var input = $(this);
+				if (input.val() === '0') {
+					input.val('');
+				}
+			},
+
+			change: function() {
+				var input = $(this);
+				input.val(parseInt(input.val().replace(/,/g, '')) || 0);
+			}
+		});
+
+		$('#save-button').click(function(event) {
+			event.preventDefault();
+
+			var charData = {};
+			$('figure input').each(function() {
+				var input = $(this);
+				charData[input.attr('name')] = input.val();
+			});
+
+			$.ajax({
+				url: '/api/{{id}}',
+				method: 'PUT',
+				data: charData
+			});
+		});
+
+	});
+</script>
