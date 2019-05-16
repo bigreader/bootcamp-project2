@@ -67,7 +67,7 @@
 					<hr>
 					<div class="form-group">
 						<label for="char-image">Image URL</label>
-						<input type="url" class="form-control" id="char-image" placeholder="https://">
+						<input type="text" class="form-control" id="char-image" placeholder="https://">
 					</div>
 				</form>
 			</div>
@@ -91,10 +91,15 @@
 				class: $('#char-class').val(),
 				race: $('#char-race').val(),
 				alignment: $('#char-alignment').val(),
-				image: $('#char-image').val(),
 				level: 1,
 				experience: 0,
 				speed: 30,
+				armor: 12,
+				initiative: -1,
+				attack: 4,
+				health: 10,
+				maxHealth: 10,
+				hitDice: 1,
 				strength: 10,
 				dexterity: 10,
 				constitution: 10,
@@ -102,6 +107,7 @@
 				wisdom: 10,
 				charisma: 10
 			}
+			if ($('#char-image').val()) data.image = $('#char-image').val();
 
 			$.post('/api/new', data, function(data) {
 				window.location.href = '/characters/' + data.id;

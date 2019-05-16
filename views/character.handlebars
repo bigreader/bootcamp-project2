@@ -16,7 +16,7 @@
 	<div class="row fullscreen">
 
 		<div id="col-bio" class="col-12 col-md-4 text-center">
-			<img src="/img/avatar.jpg" id="avatar">
+			<img src="{{image}}" id="avatar">
 			<h1>{{name}}</h1>
 			<p class="role">{{race}} {{class}} &mdash; {{alignment}}</p>
 
@@ -84,6 +84,49 @@
 						<img src="/img/box-speed.svg">
 						<input type="text" value="{{speed}}" name="speed">
 						<figcaption>Speed</figcaption>
+					</figure>
+					<figure>
+						<img src="/img/box-armor.svg">
+						<input type="text" value="{{armor}}" name="armor">
+						<figcaption>Armor Class</figcaption>
+					</figure>
+					<figure>
+						<img src="/img/box-initiative.svg">
+						<input type="text" value="{{initiative}}" name="initiative">
+						<figcaption>Initiative</figcaption>
+					</figure>
+					<figure>
+						<img src="/img/box.svg">
+						<input type="text" value="{{attack}}" name="attack">
+						<figcaption>Attack Mod</figcaption>
+					</figure>
+				</div>
+			</div>
+
+			<div class="row align-items-center my-5">
+				<div class="col-12 col-md-2">
+					<h2 class="side-heading">Health</h2>
+				</div>
+				<div class="col-12 col-md-10 d-flex flex-wrap">
+					<figure>
+						<img src="/img/box-health.svg">
+						<input type="text" value="{{health}}" name="health">
+						<figcaption>Hit Points</figcaption>
+					</figure>
+					<figure>
+						<img src="/img/box.svg">
+						<input type="text" value="{{maxHealth}}" name="maxHealth">
+						<figcaption>Max Health</figcaption>
+					</figure>
+					<figure>
+						<img src="/img/box.svg">
+						<input type="text" value="{{hitDice}}" name="hitDice">
+						<figcaption>Hit Dice</figcaption>
+					</figure>
+					<figure>
+						<img src="/img/box.svg">
+						<input type="text" value="{{potions}}" name="potions">
+						<figcaption>Health Potions</figcaption>
 					</figure>
 				</div>
 			</div>

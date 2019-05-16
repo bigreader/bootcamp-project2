@@ -26,17 +26,24 @@ module.exports = function(app, db) {
     db.Characters.create({
       routeName: routeName,
       name: character.name,
+      image: character.image,
       class: character.class,
       race: character.race,
       alignment: character.alignment,
       level: character.level,
       experience: character.experience,
       speed: character.speed,
+      armor: character.armor,
+      initiative: character.initiative,
+      attack: character.attack,
+      health: character.health,
+      maxHealth: character.maxHealth,
+      hitDice: character.hitDice,
       strength: character.strength,
       dexterity: character.dexterity,
       constitution: character.constitution,
-      wisdom: character.wisdom,
       intelligence: character.intelligence,
+      wisdom: character.wisdom,
       charisma: character.charisma
     }).then(function(character) {
       res.status(201).json(character);
