@@ -16,13 +16,5 @@ var Characters = sequelize.define("Characters", {
   intelligence: DataTypes.INTEGER
   });
 
-  Characters.associate = function(models) {
-    // Associating Author with Posts
-    // When an Author is deleted, also delete any associated Posts
-   // Characters.hasMany(models.Post, {
-     // onDelete: "cascade"
-    //});
-  };
-
   return Characters;
 };

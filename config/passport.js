@@ -1,17 +1,16 @@
 //load bcrypt
 var bCrypt = require("bcrypt-nodejs");
+var LocalStrategy = require("passport-local").Strategy;
 
-module.exports = function(passport, user) {
-  var User = user;
-  var LocalStrategy = require("passport-local").Strategy;
 
+module.exports = function(passport, User) {
   passport.serializeUser(function(user, done) {
     done(null, user.id);
   });
 
   // used to deserialize the user
   passport.deserializeUser(function(id, done) {
-    User.findById(id).then(function(user) {
+  User.findById(id).then(function(user) {
       if (user) {
         done(null, user.get());
       } else {
@@ -65,7 +64,6 @@ module.exports = function(passport, user) {
 
   //LOCAL SIGNIN
   passport.use(
-    "local-signin",
     new LocalStrategy(
       {
         // by default, local strategy uses username and password, we will override with email
@@ -75,8 +73,7 @@ module.exports = function(passport, user) {
       },
 
       function(req, email, password, done) {
-        var User = user;
-
+        console.log("signin", email, password)
         var isValidPassword = function(userpass, password) {
           return bCrypt.compareSync(password, userpass);
         };

@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const exphbs = require("express-handlebars");
 const Sequelize = require("sequelize");
+const passport = require("passport");
 
 let db = require("./models");
 
@@ -22,9 +23,21 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
+app.use(require('express-session')({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+require("./config/passport")(passport, db.user);
+
 // Routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+require("./routes/apiRoutes")(app, db);
+require("./routes/htmlRoutes")(app, db);
+require("./routes/auth")(app, passport);
+
 
 var syncOptions = { force: false };
 
