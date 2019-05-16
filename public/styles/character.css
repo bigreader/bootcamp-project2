@@ -1,7 +1,29 @@
+.btn-primary {
+    background-color: #325a32;
+    border-color: #325a32
+}
+
+.btn-primary:hover {
+    background-color: #427842;
+    border-color: #325a32
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active,
+.show > .btn-primary.dropdown-toggle {
+    background-color: #223d22;
+    border-color: #325a32
+}
+
+
+
 body {
 	font-family: 'IM Fell DW Pica', serif;
 	font-size: 1.2em;
 	background: #f4eee4;
+}
+
+a, a:hover {
+	color: #325a32;
 }
 
 .navbar {
@@ -10,13 +32,13 @@ body {
 	color: #325a32;
 }
 
-.navbar a {
-	color: #325a32;
-}
-
 .navbar-brand {
 	font-family: 'IM Fell DW Pica SC', sans-serif;
 	font-size: 1.5em;
+}
+
+.btn-primary {
+
 }
 
 .row.fullscreen {
@@ -24,7 +46,7 @@ body {
 }
 
 #col-bio {
-	background: #345 url(background.jpg) center/cover;
+	background: #345 url(/img/background.jpg) center/cover;
 	color: white;
 }
 
@@ -95,10 +117,29 @@ figure .value {
 	z-index: 2;
 }
 
-figure .value.md { font-size: 2rem; }
-figure .value.sm { font-size: 1rem; }
+figure input {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
 
-figure.white .value {
+	height: 6rem;
+
+	background: none;
+	border: none;
+
+	font-family: 'PT Sans', sans-serif;
+	font-size: 2.25rem;
+	text-align: center;
+
+	z-index: 3;
+}
+
+figure .value.md, figure input.md { font-size: 2rem; }
+figure .value.sm, figure input.sm { font-size: 1.25rem; }
+
+figure.white .value,
+figure.white input {
 	color: white;
 }
 
