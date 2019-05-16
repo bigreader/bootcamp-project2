@@ -26,6 +26,7 @@ module.exports = function(app, db) {
     db.Characters.create({
       routeName: routeName,
       name: character.name,
+      image: character.image,
       class: character.class,
       race: character.race,
       alignment: character.alignment,

@@ -3,6 +3,10 @@ module.exports = function(sequelize, DataTypes) {
 var Characters = sequelize.define("Characters", {
   routeName: DataTypes.STRING,
   name: DataTypes.STRING,
+  image: {
+    type: DataTypes.STRING,
+    defaultValue: "/img/avatar.png"
+  }
   class: DataTypes.STRING,
   race: DataTypes.STRING,
   alignment: DataTypes.STRING,
