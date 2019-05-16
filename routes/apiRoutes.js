@@ -1,4 +1,4 @@
-let Character = require("../models/Characters.js");
+let db = require("../models");
 
 module.exports = function(app) {
   app.get("/api/:characters?", function(req, res) {
@@ -18,17 +18,18 @@ module.exports = function(app) {
   });
 
   app.post("/api/new", function(req, res) {
+
     let character = req.body;
     let routeName = character.name.replace(/\s+/g, "").toLowerCase();
-
-    Character.create({
+    //console.log(character);
+    db.Characters.create({
       routeName: routeName,
       name: character.name,
       class: character.class,
       race: character.race,
       alignment: character.alignment,
       level: character.level,
-      experiene: character.experiene,
+      experience: character.experience,
       speed: character.speed,
       charisma: character.charisma,
       strength: character.strength,
