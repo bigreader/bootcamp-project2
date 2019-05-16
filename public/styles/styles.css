@@ -1,11 +1,19 @@
 
 
-body { /* Visual */
-  background-image: url("greenish.png");
+html { 
+  background: url("greenish.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+/*body { /* Visual */
+  /*background-image: url("greenish.png");
   /*background-repeat: no-repeat;*/
   /*background-size: cover;*/
   /*background-size: 100% 100%;*/
-}
 
 h1 {
 font-size: 50px;
@@ -88,8 +96,7 @@ button {
 .modalText {
     font-family: 'IM Fell English', serif;
     font-size: 20px;
-    color: #325a32;
-    
+    color: #325a32;  
 }
 
 .box {
@@ -121,8 +128,6 @@ button {
   width: 90px;
 }
 
-
-
 #subhead {
  /* margin-left: 70px; */
 }
@@ -148,184 +153,71 @@ button {
     margin-left: 70px;
   }*/
     
-  #welcome{
-    margin-top:15px;
-    margin-left: 10px;
+  #welcome {
+    margin-top: 15px;
+    margin-left: 0px;
     padding: 10px;
     height: 180px;
     width: 200px;
     border-radius: 10px;  
-    /* background-color:#eef8b1;*/
-    background-color: #fbfccb;
+    background-color: #f4eee4;
     border: 3px;
     border-color: #325a32;
     border-style: ridge;
     }
     
-    button {      
+  #button_holder {
+      width: 200px;
+      margin-top: 10px;
+  }
+
+  button {      
     margin-top: 10px;
     margin-left: 60px;
-    }
-    
+  }   
+}
+
+
+@media only screen and (max-width: 411px) {
+
+#welcome {
+margin-left: 0px;
+}  
+
+}
 
 
 
 @media only screen and (max-width: 640px) {
 
 #welcome {
-  width: 650px;
-  height: 220px;
+  color: red;
+  width: 300px;
+  height: 110px;
   padding-left: 0px;
 }  
 
 #button_holder {
-  width: 650px;
+  width: 300px;
+  margin-top: 10px;
 }
 
 #logIn {
-  width: 40px;
+  width: 30px;
   font-size: 12px;
   margin-top: 20px;
   margin-left: 5px;
 }
 
 #create_acct {
-  width: 100px;
+  width: 30px;
   font-size: 12px;
   /* margin-top: 10px; */
-  margin-left: 15px;
+  margin-left: 30px;
 }
-
-
-}
-
-
-/* display for a tablet 768px or smaller */
-
-@media only screen and (max-width: 768px) {
-
-  h1 {
-   font-size: 25px;
-  } 
-  
-  h2 {
-    font-size: 18px;
-  }
-  
-  #welcome{
-    margin-top:20px;
-    margin-left: 20px;
-    padding: 10px;
-    height: 200px;
-    width: 440px;
-    border-radius: 20px;  
-    background-color:#f4eee4;
-    border: 3px;
-    border-color: #325a32;
-    border-style: ridge;
-    }
-  
-    button { 
-      margin-top: 0px;
-      margin-left: 170px;
-    }
-       
-  }
-
-@media only screen and (max-width: 823px) {
-
-  h1 {
-   font-size: 20px;
-  } 
-
-  h2 {
-    font-size: 15px;
-   }
-  
-  #welcome{
-    margin-top:20px;
-    margin-left: 20px;
-    padding: 15px;
-    height: 180px;
-    width: 380px;
-    border-radius: 25px;  
-    background-color:#f4eee4;
-    border: 3px;
-    border-color: #325a32;
-    border-style: ridge;
-    }
-
-    #logIn {
-      width: 120px;
-    }
-     
-    #main_head {
-     /* margin-top: 10px; */
-     /* margin-left: 70px; */
-    }
-
-    #main_head {
-      /*margin-top: 10px;*/
-       /* margin-left: 70px; */
-      }
-      
-
-    body {
-        background-position: left, bottom;
-        background-size: cover;
-    }
-
 
 }
 
-
-
-
-
-
-
-@media only screen and (max-width: 736px){
-
-  h1 {
-    font-size: 25px;
-    }
-  
-  h2 {
-      font-size: 15px;
-    }
-  
-  body {
-    background-position: left, bottom;
-    background-size: cover;
-    }
-  
-  #main_head {
-    margin-top: 5px;
-    /* margin-left: 70px; */
-    }
-  
-  #welcome{
-    margin-top:20px;
-    margin-left: 20px;
-    padding: 15px;
-    height: 200px;
-    width: 330px;
-    border-radius: 20px;  
-    /* background-color:#eef8b1;*/
-    background-color: #f4eee4;
-    border: 3px;
-    border-color: #325a32;
-    border-style: ridge;
-    }
-  
-  button {
-    margin-top: 10px;
-    margin-left: 120px;
-    }
-  
-}
-  
-  
 
 /* mobile display - 731 and less */
 
@@ -368,87 +260,145 @@ button {
     margin-left: 120px;
     }
 
+    #logIn {
+      width: 100px;
+      font-size: 12px;
+      /* margin-top: 10px; */
+      margin-left: 30px;
+    }
+
+    #create_acct {
+      width: 100px;
+      font-size: 12px;
+      /* margin-top: 10px; */
+      margin-left: 30px;
+    }
+
 }
 
 
 
+@media only screen and (max-width: 736px){
 
-/* mobile display - 640px and less */
-
-/* @media only screen and (max-width: 640px) {
-
+  h1 {
+    font-size: 25px;
+    }
+  
+  h2 {
+      font-size: 15px;
+    }
+  
   body {
     background-position: left, bottom;
-  }
-
+    background-size: cover;
+    }
+  
+  #main_head {
+    margin-top: 5px;
+    /* margin-left: 70px; */
+    }
+  
   #welcome{
-    margin-top:10px;
-    margin-left: 0px;
+    margin-top:20px;
+    margin-left: 20px;
     padding: 15px;
-    height: 220px;
-    width: 500px;
-    border-radius: 30px; 
+    height: 200px;
+    width: 330px;
+    border-radius: 20px;  
+    /* background-color:#eef8b1;*/
+    background-color: #f4eee4;
     border: 3px;
+    border-color: #325a32;
     border-style: ridge;
     }
-      
+  
+  button {
+    margin-top: 10px;
+    margin-left: 30px;
+    }
+  
+}
+
+/* display for a tablet 768px or smaller */
+
+@media only screen and (max-width: 768px) {
+
+  h1 {
+   font-size: 25px;
+  } 
+  
+  h2 {
+    font-size: 18px;
+  }
+  
+  #welcome{
+    margin-top:20px;
+    margin-left: 20px;
+    padding: 10px;
+    height: 200px;
+    width: 440px;
+    border-radius: 20px;  
+    background-color:#f4eee4;
+    border: 3px;
+    border-color: #325a32;
+    border-style: ridge;
+    }
+  
+    button { 
+      margin-top: 0px;
+      margin-left: 30px;
+    }
+       
+  }
+
+
+
+@media only screen and (max-width: 823px) {
+
+  h1 {
+   font-size: 20px;
+  } 
+
+  h2 {
+    font-size: 15px;
+   }
+  
    #main_head {
-    font-size: 30px;
-    margin-top: 5px;
-    /* margin-left: 20px;*/
-    /* } */
+    margin-top: 10px;
+     /* margin-left: 70px; */
+    }    
 
-    /* h2 {
-    font-size: 20px
+
+  #welcome{
+    margin-top:20px;
+    margin-left: 20px;
+    padding: 15px;
+    height: 180px;
+    width: 330px;
+    border-radius: 25px;  
+    background-color:#f4eee4;
+    border: 3px;
+    border-color: #325a32;
+    border-style: ridge;
     }
 
-    button {
-    margin-top: 0px;
-    margin-left: 140px;
+ 
+    #logIn {
+      margin-left: 15px;
+      font-size: 15px;
+      width: 120px;
     }
 
-} */
-
-  
-  
-  /* mobile display - 640px and less */
-  
-  /* @media only screen and (max-width: 640px) {
-  
-    body {
-      background-position: left, bottom;
+    #create_acct {
+      margin-left: 40px;
+      font-size: 15px;
+      width: 120px;
     }
-  
-    #welcome{
-      margin-top:10px;
-      margin-left: 0px;
-      padding: 15px;
-      height: 200px;
-      width: 240px;
-      border-radius: 10px; 
-      border: 3px;
-      border-style: ridge;
-      }
-        
-     #main_head {
-      margin-top: 5px;
-      /* margin-left: 20px;*/
-      /* }
-  
-      h1 {
-        font-size: 20px
-        }
+      
 
-      h2 {
-      font-size: 15px
-      }
-  
-      button {
-        margin-top: 0px;
-        margin-left: 85px;
-      }
-  
-    } */
+}
+
+
 
 
 
