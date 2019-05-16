@@ -25,37 +25,37 @@
 		<div id="col-bio" class="col-12 col-md-4 text-center">
 			<img src="/img/avatar.jpg" id="avatar">
 			<h1>{{name}}</h1>
-			<p class="role">{{race}}  •  {{class}}   •  {{alignment}}   •  Lv. {{level}}</p>
+			<p class="role">{{race}} {{class}} &mdash; {{alignment}}</p>
 
 			<div class="core-stats">
 				<figure class="white">
 					<img src="/img/box-core.svg">
-					<span class="value">{{strength}}</span>
+					<input type="text" value="{{strength}}">
 					<figcaption>Strength</figcaption>
 				</figure>
 				<figure class="white">
 					<img src="/img/box-core.svg">
-					<span class="value">{{dexterity}}</span>
+					<input type="text" value="{{dexterity}}">
 					<figcaption>Dexterity</figcaption>
 				</figure>
 				<figure class="white">
 					<img src="/img/box-core.svg">
-					<span class="value">{{constitution}}</span>
+					<input type="text" value="{{constitution}}">
 					<figcaption>Constitution</figcaption>
 				</figure>
 				<figure class="white">
 					<img src="/img/box-core.svg">
-					<span class="value">{{intelligence}}</span>
+					<input type="text" value="{{intelligence}}">
 					<figcaption>Intelligence</figcaption>
 				</figure>
 				<figure class="white">
 					<img src="/img/box-core.svg">
-					<span class="value">{{speed}}</span>
+					<input type="text" value="{{speed}}">
 					<figcaption>Speed</figcaption>
 				</figure>
 				<figure class="white">
 					<img src="/img/box-core.svg">
-					<span class="value">{{charisma}}</span>
+					<input type="text" value="{{charisma}}">
 					<figcaption>Charisma</figcaption>
 				</figure>
 			</div>
@@ -66,22 +66,55 @@
 
 			<div class="row align-items-center my-5">
 				<div class="col-12 col-md-2">
+					<h2 class="side-heading">Level</h2>
+				</div>
+				<div class="col-12 col-md-10 d-flex flex-wrap">
+					<figure>
+						<img src="/img/box-level.svg">
+						<input type="text" value="{{level}}">
+						<figcaption>Level</figcaption>
+					</figure>
+					<figure>
+						<img src="/img/box-xp.svg">
+						<input type="text" class="sm" value="{{experience}}">
+						<figcaption>Experience</figcaption>
+					</figure>
+				</div>
+			</div>
+
+			<div class="row align-items-center my-5">
+				<div class="col-12 col-md-2">
+					<h2 class="side-heading">Combat</h2>
+				</div>
+				<div class="col-12 col-md-10 d-flex flex-wrap">
+					<figure>
+						<img src="/img/box-speed.svg">
+						<input type="text" value="{{speed}}">
+						<figcaption>Speed</figcaption>
+					</figure>
+				</div>
+			</div>
+
+			<hr>
+
+			<div class="row align-items-center my-5">
+				<div class="col-12 col-md-2">
 					<h2 class="side-heading">Combat</h2>
 				</div>
 				<div class="col-12 col-md-10 d-flex flex-wrap">
 					<figure>
 						<img src="/img/box-armor.svg">
-						<span class="value">11</span>
+						<input type="text" value="11">
 						<figcaption>Armor Class</figcaption>
 					</figure>
 					<figure>
 						<img src="/img/box-initiative.svg">
-						<span class="value">+1</span>
+						<input type="text" value="1">
 						<figcaption>Initiative</figcaption>
 					</figure>
 					<figure>
 						<img src="/img/box-speed.svg">
-						<span class="value">30</span>
+						<input type="text" value="30">
 						<figcaption>Speed</figcaption>
 					</figure>
 				</div>
@@ -94,17 +127,17 @@
 				<div class="col-12 col-md-10 d-flex flex-wrap">
 					<figure>
 						<img src="/img/box-health.svg">
-						<span class="value">20</span>
+						<input type="text" value="20">
 						<figcaption>Hit Points</figcaption>
 					</figure>
 					<figure>
 						<img src="/img/box.svg">
-						<span class="value">24</span>
+						<input type="text" value="24">
 						<figcaption>Max Health</figcaption>
 					</figure>
 					<figure>
 						<img src="/img/box.svg">
-						<span class="value">7</span>
+						<input type="text" value="7">
 						<figcaption>Hit Dice</figcaption>
 					</figure>
 				</div>
