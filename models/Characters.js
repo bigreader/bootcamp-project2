@@ -7,7 +7,7 @@ var Characters = sequelize.define("Characters", {
   race: DataTypes.STRING,
   alignment: DataTypes.STRING,
   level: DataTypes.INTEGER,
-  experiene: DataTypes.INTEGER,
+  experience: DataTypes.INTEGER,
   speed: DataTypes.INTEGER,
   charisma: DataTypes.INTEGER,
   strength: DataTypes.INTEGER,
