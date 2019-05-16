@@ -1,3 +1,21 @@
+.btn-primary {
+    background-color: #325a32;
+    border-color: #325a32
+}
+
+.btn-primary:hover {
+    background-color: #427842;
+    border-color: #325a32
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active,
+.show > .btn-primary.dropdown-toggle {
+    background-color: #223d22;
+    border-color: #325a32
+}
+
+
+
 body {
 	font-family: 'IM Fell DW Pica', serif;
 	font-size: 1.2em;
@@ -17,6 +35,10 @@ body {
 .navbar-brand {
 	font-family: 'IM Fell DW Pica SC', sans-serif;
 	font-size: 1.5em;
+}
+
+.btn-primary {
+
 }
 
 .row.fullscreen {

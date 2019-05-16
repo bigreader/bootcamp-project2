@@ -4,19 +4,12 @@
 		<span class="navbar-toggler-icon"></span>
 	</button>
 
-	<div class="collapse navbar-collapse" id="nav">
-		<ul class="navbar-nav ml-auto">
-			<li class="nav-item active">
-				<a class="nav-link" href="/">Overview <span class="sr-only">(current)</span></a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="/inventory">Equipment</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="/biography">Biography</a>
-			</li>
-		</ul>
+	<div class="collapse navbar-collapse justify-content-end mr-3" id="nav">
+		<a href="/inventory">View Characters</a>
 	</div>
+
+	<button id="save-button" class="btn btn-primary">Save</button>
+
 </nav>
 
 <div class="container-fluid">
@@ -30,32 +23,32 @@
 			<div class="core-stats">
 				<figure class="white">
 					<img src="/img/box-core.svg">
-					<input type="text" value="{{strength}}">
+					<input type="text" value="{{strength}}" name="strength">
 					<figcaption>Strength</figcaption>
 				</figure>
 				<figure class="white">
 					<img src="/img/box-core.svg">
-					<input type="text" value="{{dexterity}}">
+					<input type="text" value="{{dexterity}}" name="dexterity">
 					<figcaption>Dexterity</figcaption>
 				</figure>
 				<figure class="white">
 					<img src="/img/box-core.svg">
-					<input type="text" value="{{constitution}}">
+					<input type="text" value="{{constitution}}" name="constitution">
 					<figcaption>Constitution</figcaption>
 				</figure>
 				<figure class="white">
 					<img src="/img/box-core.svg">
-					<input type="text" value="{{intelligence}}">
+					<input type="text" value="{{intelligence}}" name="intelligence">
 					<figcaption>Intelligence</figcaption>
 				</figure>
 				<figure class="white">
 					<img src="/img/box-core.svg">
-					<input type="text" value="{{speed}}">
+					<input type="text" value="{{speed}}" name="speed">
 					<figcaption>Speed</figcaption>
 				</figure>
 				<figure class="white">
 					<img src="/img/box-core.svg">
-					<input type="text" value="{{charisma}}">
+					<input type="text" value="{{charisma}}" name="charisma">
 					<figcaption>Charisma</figcaption>
 				</figure>
 			</div>
@@ -71,12 +64,12 @@
 				<div class="col-12 col-md-10 d-flex flex-wrap">
 					<figure>
 						<img src="/img/box-level.svg">
-						<input type="text" value="{{level}}">
+						<input type="text" value="{{level}}" name="level">
 						<figcaption>Level</figcaption>
 					</figure>
 					<figure>
 						<img src="/img/box-xp.svg">
-						<input type="text" class="sm" value="{{experience}}">
+						<input type="text" class="sm" value="{{experience}}" name="experience">
 						<figcaption>Experience</figcaption>
 					</figure>
 				</div>
@@ -89,59 +82,48 @@
 				<div class="col-12 col-md-10 d-flex flex-wrap">
 					<figure>
 						<img src="/img/box-speed.svg">
-						<input type="text" value="{{speed}}">
+						<input type="text" value="{{speed}}" name="speed">
 						<figcaption>Speed</figcaption>
-					</figure>
-				</div>
-			</div>
-
-			<hr>
-
-			<div class="row align-items-center my-5">
-				<div class="col-12 col-md-2">
-					<h2 class="side-heading">Combat</h2>
-				</div>
-				<div class="col-12 col-md-10 d-flex flex-wrap">
-					<figure>
-						<img src="/img/box-armor.svg">
-						<input type="text" value="11">
-						<figcaption>Armor Class</figcaption>
-					</figure>
-					<figure>
-						<img src="/img/box-initiative.svg">
-						<input type="text" value="1">
-						<figcaption>Initiative</figcaption>
-					</figure>
-					<figure>
-						<img src="/img/box-speed.svg">
-						<input type="text" value="30">
-						<figcaption>Speed</figcaption>
-					</figure>
-				</div>
-			</div>
-
-			<div class="row align-items-center my-5">
-				<div class="col-12 col-md-2">
-					<h2 class="side-heading">Health</h2>
-				</div>
-				<div class="col-12 col-md-10 d-flex flex-wrap">
-					<figure>
-						<img src="/img/box-health.svg">
-						<input type="text" value="20">
-						<figcaption>Hit Points</figcaption>
-					</figure>
-					<figure>
-						<img src="/img/box.svg">
-						<input type="text" value="24">
-						<figcaption>Max Health</figcaption>
-					</figure>
-					<figure>
-						<img src="/img/box.svg">
-						<input type="text" value="7">
-						<figcaption>Hit Dice</figcaption>
 					</figure>
 				</div>
 			</div>
 
 		</div>
 	</div>
+
+
+<script type="text/javascript">
+	$(function() {
+
+		$('figure input').on({
+			focus: function() {
+				var input = $(this);
+				if (input.val() === '0') {
+					input.val('');
+				}
+			},
+
+			change: function() {
+				var input = $(this);
+				input.val(parseInt(input.val().replace(/,/g, '')) || 0);
+			}
+		});
+
+		$('#save-button').click(function(event) {
+			event.preventDefault();
+
+			var charData = {};
+			$('figure input').each(function() {
+				var input = $(this);
+				charData[input.attr('name')] = input.val();
+			});
+
+			$.ajax({
+				url: '/api/{{id}}',
+				method: 'PUT',
+				data: charData
+			});
+		});
+
+	});
+</script>
