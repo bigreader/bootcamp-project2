@@ -3,7 +3,7 @@ let db = require("../models");
 module.exports = function(app) {
   app.get("/api/:characters?", function(req, res) {
     if (req.params.characters) {
-      Character.findOne({
+      db.Characters.findOne({
         where: {
           routeName: req.params.characters
         }
@@ -11,7 +11,7 @@ module.exports = function(app) {
         return res.json(result);
       });
     } else {
-      Character.findAll().then(function(result) {
+      db.Characters.findAll().then(function(result) {
         return res.json(result);
       });
     }
@@ -21,7 +21,7 @@ module.exports = function(app) {
 
     let character = req.body;
     let routeName = character.name.replace(/\s+/g, "").toLowerCase();
-    //console.log(character);
+    
     db.Characters.create({
       routeName: routeName,
       name: character.name,
@@ -40,6 +40,7 @@ module.exports = function(app) {
 
     res.status(204).end();
   });
+ 
 
   app.delete("/api/delete/:id", function(req, res) {
     db.Character.destroy({
