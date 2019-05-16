@@ -40,6 +40,17 @@ module.exports = function(app) {
 
     res.status(204).end();
   });
+
+  app.put("/api/:characters"), function(req,res){
+    db.Characters.update(
+      req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      }).then(function(dbCharacter) {
+      res.json(dbCharacter);
+      })}
  
 
   app.delete("/api/delete/:id", function(req, res) {
